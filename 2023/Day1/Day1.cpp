@@ -1,10 +1,10 @@
 #include <cctype>
 #include <stdexcept>
-#include <fstream>
 #include <iostream>
 #include <string>
 #include <vector>
 
+#include "aoclib.h"
 #include "LiteralNumberBuilder.h"
 
 /*
@@ -69,21 +69,6 @@ produces 281.
 What is the sum of all of the calibration values?
 */
 
-const std::vector<std::string> readInput()
-{
-    std::vector<std::string> result;
-    std::ifstream input("input.txt");
-
-    std::string line;
-    while (std::getline(input, line))
-    {
-        result.push_back(line);
-    }
-
-    input.close();
-    return result;
-}
-
 template <typename Iterator>
 int findDigit(const std::string& string, Iterator start, const Iterator end, bool findTypedNumbers, bool reversed)
 {
@@ -115,7 +100,7 @@ int findCalibrationValue(const std::string& string, bool findTypedNumbers)
 int main()
 {
     const bool part2 = true;
-    const std::vector<std::string> input = readInput();
+    const std::vector<std::string> input = aoclib::readInput("input.txt");
 
     int sum = 0;
     for (const std::string& line : input)
