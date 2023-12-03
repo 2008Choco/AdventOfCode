@@ -28,7 +28,7 @@ namespace aoclib
          *
          * @return the time elapsed in millis
          */
-        unsigned int getTimeMillis() const;
+        long long getTimeMillis() const;
 
         friend std::ostream& operator<<(std::ostream& out, const SimpleTimer timer)
         {

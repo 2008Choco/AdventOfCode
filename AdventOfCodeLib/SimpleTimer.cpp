@@ -11,7 +11,7 @@ namespace aoclib
         _start = std::chrono::high_resolution_clock::now();
     }
 
-    unsigned int SimpleTimer::getTimeMillis() const
+    long long SimpleTimer::getTimeMillis() const
     {
         using namespace std::chrono;
 

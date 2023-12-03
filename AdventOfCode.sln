@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AdventOfCodeLib", "AdventOf
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Day2", "2023\Day2\Day2.vcxproj", "{4F67A5BA-D6C5-46F9-A572-01DF9FD21F35}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Day3", "2023\Day3\Day3.vcxproj", "{5F5EEA6D-487E-4E26-97A1-8EEA58216BA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -43,6 +45,14 @@ Global
 		{4F67A5BA-D6C5-46F9-A572-01DF9FD21F35}.Release|x64.Build.0 = Release|x64
 		{4F67A5BA-D6C5-46F9-A572-01DF9FD21F35}.Release|x86.ActiveCfg = Release|Win32
 		{4F67A5BA-D6C5-46F9-A572-01DF9FD21F35}.Release|x86.Build.0 = Release|Win32
+		{5F5EEA6D-487E-4E26-97A1-8EEA58216BA8}.Debug|x64.ActiveCfg = Debug|x64
+		{5F5EEA6D-487E-4E26-97A1-8EEA58216BA8}.Debug|x64.Build.0 = Debug|x64
+		{5F5EEA6D-487E-4E26-97A1-8EEA58216BA8}.Debug|x86.ActiveCfg = Debug|Win32
+		{5F5EEA6D-487E-4E26-97A1-8EEA58216BA8}.Debug|x86.Build.0 = Debug|Win32
+		{5F5EEA6D-487E-4E26-97A1-8EEA58216BA8}.Release|x64.ActiveCfg = Release|x64
+		{5F5EEA6D-487E-4E26-97A1-8EEA58216BA8}.Release|x64.Build.0 = Release|x64
+		{5F5EEA6D-487E-4E26-97A1-8EEA58216BA8}.Release|x86.ActiveCfg = Release|Win32
+		{5F5EEA6D-487E-4E26-97A1-8EEA58216BA8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2DE8C50E-9E0C-4D74-9776-10115D341EDB} = {F62785AB-7641-487B-9E1F-A4B39460AB51}
 		{4F67A5BA-D6C5-46F9-A572-01DF9FD21F35} = {F62785AB-7641-487B-9E1F-A4B39460AB51}
+		{5F5EEA6D-487E-4E26-97A1-8EEA58216BA8} = {F62785AB-7641-487B-9E1F-A4B39460AB51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6BC0CDD-C2B0-410D-AAA6-5C0C60AC9DF3}
