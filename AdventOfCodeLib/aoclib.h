@@ -1,5 +1,6 @@
 #pragma once
 
+#include <regex>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -54,7 +55,8 @@ namespace aoclib
 
     /**
      * Eat characters in the provided string until it reaches the specified
-     * character and return the characters that were eaten as a string.
+     * character and return the characters that were eaten as a string. The
+     * string itself will be modified and have all eaten characters removed.
      *
      * @param string the input string
      * @param until the character to find at which point eating will stop
@@ -67,16 +69,31 @@ namespace aoclib
 
     /**
      * Eat characters in the provided string until it reaches the specified
-     * character and return the characters that were eaten as a string.
+     * string and return the characters that were eaten as a string. The string
+     * itself will be modified and have all eaten characters removed.
      *
      * @param string the input string
-     * @param until the character to find at which point eating will stop
+     * @param until the string to find at which point eating will stop
      *
      * @return a string containing all the characters that were eaten (excluding
-     * the eaten character itself), or the passed string if no characters were
-     * eaten because they could not be found in the string
+     * the eaten characters themselves), or the passed string if no characters
+     * were eaten because they could not be found in the string
      */
     std::string eat(std::string& string, const std::string_view until);
+
+    /**
+     * Eat characters in the provided string until it reaches the specified
+     * regex and return the characters that were eaten as a string. The string
+     * itself will be modified and have all eaten characters removed.
+     *
+     * @param string the input string
+     * @param until the regex sequence to find at which point eating will stop
+     *
+     * @return a string containing all the characters that were eaten (excluding
+     * the eaten characters themselves), or the passed string if no characters
+     * were eaten because they could not be found in the string
+     */
+    std::string eat(std::string& string, const std::regex until);
 
     /**
      * Split the provided string by the provided delimiter and return its separated
@@ -96,7 +113,7 @@ namespace aoclib
      * Split the provided string by the provided delimiter and return its separated
      * components in a vector of strings.
      *
-     * Say for example the input string is "Hello,world" and the delimiter is ',',
+     * Say for example the input string is "Hello the world" and the delimiter is " the ",
      * the returned vector will contain two strings, { "Hello", "world" }.
      *
      * @param string the input string
@@ -105,4 +122,28 @@ namespace aoclib
      * @return the string's components that have been split between the delimiter
      */
     std::vector<std::string> split(const std::string_view string, const std::string_view delimiter);
+
+    /**
+     * Split the provided string by the provided delimiter regex and return its
+     * separated components in a vector of strings.
+     *
+     * Say for example the input string is "Hello world" and the delimiter regex is "\s+",
+     * the returned vector will contain two strings, { "Hello", "world" }.
+     *
+     * @param string the input string
+     * @param delimiter the delimiter to split by
+     *
+     * @return the string's components that have been split between the delimiter
+     */
+    std::vector<std::string> split(const std::string_view string, const std::regex delimiter);
+
+    /**
+     * Trim leading and trailing whitespace from the given string.
+     *
+     * @param string the string to trim
+     * @param whitespace the whitespace to trim
+     *
+     * @return the trimmed string
+     */
+    std::string trim(const std::string& string, const std::string& whitespace = " \t");
 }

@@ -5,6 +5,8 @@
 #include "aoclib.h"
 #include "EngineSchematic.h"
 
+// https://adventofcode.com/2023/day/3
+
 int main()
 {
     EngineSchematic schematic(aoclib::readInput());

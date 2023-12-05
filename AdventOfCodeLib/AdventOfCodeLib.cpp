@@ -86,6 +86,26 @@ namespace aoclib
         return eat(string, until, until.size());
     }
 
+    std::string eat(std::string& string, const std::regex until)
+    {
+        std::string result;
+
+        std::smatch match;
+        if (std::regex_search(string, match, until))
+        {
+            size_t index = match.position();
+            result = string.substr(0, index);
+            string.erase(0, index + match.length());
+        }
+        else
+        {
+            result = string;
+            string.erase();
+        }
+
+        return result;
+    }
+
     template <typename T>
     std::vector<std::string> split(const std::string_view string, const T& delimiter, const size_t delimiterSize)
     {
@@ -109,5 +129,40 @@ namespace aoclib
     std::vector<std::string> split(const std::string_view string, const std::string_view delimiter)
     {
         return split(string, delimiter, delimiter.size());
+    }
+
+    std::vector<std::string> split(const std::string_view string, const std::regex delimiter)
+    {
+        std::vector<std::string> components;
+        std::string buffer(string);
+
+        std::smatch match;
+        while (std::regex_search(buffer, match, delimiter))
+        {
+            size_t index = match.position();
+            components.push_back(buffer.substr(0, index));
+            buffer.erase(0, index + match.length());
+        }
+
+        if (!buffer.empty())
+        {
+            components.push_back(buffer);
+        }
+
+        return components;
+    }
+
+    std::string trim(const std::string& string, const std::string& whitespace)
+    {
+        const auto begin = string.find_first_not_of(whitespace);
+        if (begin == std::string::npos)
+        {
+            return "";
+        }
+
+        const auto end = string.find_last_not_of(whitespace);
+        const auto range = (end - begin) + 1;
+
+        return string.substr(begin, range);
     }
 }
